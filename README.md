@@ -1,7 +1,15 @@
 # Cybersecurity Cheatsheats
 Collection of cybersecurity notes and cheat sheets.  If I pulled content from some else’s cheat sheet or site it will be reference section.
 
-## Starting Services 
+## User and group managment
+
+### Windows
+
+* net user bob bob123 /ADD
+* net localgroup "Remote Desktop Users" bob /ADD
+* net localgroup "Users" bob /ADD
+
+## Starting services 
 
 ### linux
 
