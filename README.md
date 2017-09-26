@@ -1,4 +1,4 @@
-# Cybersecurity Cheatsheats
+# Cybersecurity Cheatsheets
 Collection of cybersecurity notes and cheat sheets.  If I pulled content from some else’s cheat sheet or site it will be listed reference section.
 
 ## User and group managment
