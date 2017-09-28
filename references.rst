@@ -1,6 +1,9 @@
 References
 ==========
 
+Cheatsheets
+-----------
+
 * http://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/?redirect
 * http://pentestmonkey.net/cheat-sheet/sql-injection/mysql-sql-injection-cheat-sheet
 * http://pentestmonkey.net/tools/audit/unix-privesc-check
@@ -19,3 +22,8 @@ References
 * https://jordanpotti.com/oscp/
 * https://pentest.blog/windows-privilege-escalation-methods-for-pentesters/
 * https://security.stackexchange.com/questions/68442/escalating-from-apache-shell-to-root
+
+Libraries
+---------
+
+* https://www.coresecurity.com/corelabs-research/open-source-tools/impacket

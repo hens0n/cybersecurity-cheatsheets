@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Nmap &mdash; Cybersecurity Cheat Sheets 1.1 documentation</title>
+  <title>Web Servers &mdash; Cybersecurity Cheat Sheets 1.1 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Cybersecurity Cheat Sheets 1.1 documentation" href="../index.html"/>
-        <link rel="next" title="Web Servers" href="webservers.html"/>
-        <link rel="prev" title="Netcat" href="netcat.html"/> 
+        <link rel="next" title="Active Information Gathering" href="../informationgathering/active.html"/>
+        <link rel="prev" title="Nmap" href="nmap.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -97,11 +97,8 @@
 <li class="toctree-l1"><a class="reference internal" href="msfvenom.html">msfvenom</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ncat.html">Ncat</a></li>
 <li class="toctree-l1"><a class="reference internal" href="netcat.html">Netcat</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Nmap</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#shell">Shell</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="webservers.html">Web Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nmap.html">Nmap</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Web Servers</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Information Gathering</span></p>
 <ul>
@@ -164,13 +161,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Nmap</li>
+      <li>Web Servers</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/tools/nmap.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/tools/webservers.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -183,20 +180,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="nmap">
-<h1>Nmap<a class="headerlink" href="#nmap" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="shell">
-<h2>Shell<a class="headerlink" href="#shell" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>Ping sweep: nmap –v –sn a.b.c.d-z –oG sweep.txt
--   Grep Up sweep.txt | cut –d ” ” -f 2</li>
-<li>Web sweep: nmap –p 80 a.b.c.0/24 -oG web.txt</li>
-<li>Top 20 TCP ports: nmap –sT –A –top-ports=20 a.b.c.d-z –oG top20.txt</li>
-<li>OS: nmap –O &lt;IP Address&gt;</li>
-<li>Banners: nmap –sV –sT &lt;IP Address&gt;</li>
-<li>NSE Script: nmap –script somescript.nse</li>
-<li>SMB: nmap –v –p 139, 445 smb.txt a.b.c.d-z</li>
-</ul>
+  <div class="section" id="web-servers">
+<h1>Web Servers<a class="headerlink" href="#web-servers" title="Permalink to this headline">¶</a></h1>
+<p>Webroot: /var/www/html</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>-   service apache2 start
+</pre></div>
+</div>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>python -m SimpleHTTPServer
+</pre></div>
 </div>
 </div>
 
@@ -210,10 +201,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="webservers.html" class="btn btn-neutral float-right" title="Web Servers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../informationgathering/active.html" class="btn btn-neutral float-right" title="Active Information Gathering" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="netcat.html" class="btn btn-neutral" title="Netcat" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="nmap.html" class="btn btn-neutral" title="Nmap" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
