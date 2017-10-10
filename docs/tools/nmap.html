@@ -97,10 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="msfvenom.html">msfvenom</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ncat.html">Ncat</a></li>
 <li class="toctree-l1"><a class="reference internal" href="netcat.html">Netcat</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Nmap</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#shell">Shell</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Nmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="webservers.html">Web Servers</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Information Gathering</span></p>
@@ -185,19 +182,23 @@
             
   <div class="section" id="nmap">
 <h1>Nmap<a class="headerlink" href="#nmap" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="shell">
-<h2>Shell<a class="headerlink" href="#shell" title="Permalink to this headline">¶</a></h2>
+<p>Ping Sweep Example:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>nmap –v –sn a.b.c.d-z –oG sweep.txt
+grep Up sweep.txt <span class="p">|</span> cut –d <span class="s2">&quot; &quot;</span> -f 2
+</pre></div>
+</div>
+<p>Web Sweep</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>nmap –p <span class="m">80</span> a.b.c.0/24 -oG web.txt
+grep Up sweep.txt <span class="p">|</span> cut –d <span class="s2">&quot; &quot;</span> -f 2
+</pre></div>
+</div>
 <ul class="simple">
-<li>Ping sweep: nmap –v –sn a.b.c.d-z –oG sweep.txt
--   Grep Up sweep.txt | cut –d ” ” -f 2</li>
-<li>Web sweep: nmap –p 80 a.b.c.0/24 -oG web.txt</li>
 <li>Top 20 TCP ports: nmap –sT –A –top-ports=20 a.b.c.d-z –oG top20.txt</li>
 <li>OS: nmap –O &lt;IP Address&gt;</li>
 <li>Banners: nmap –sV –sT &lt;IP Address&gt;</li>
 <li>NSE Script: nmap –script somescript.nse</li>
 <li>SMB: nmap –v –p 139, 445 smb.txt a.b.c.d-z</li>
 </ul>
-</div>
 </div>
 
 
