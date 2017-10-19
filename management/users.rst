@@ -4,8 +4,8 @@ Users and Groups
 Add user
 --------
 
-Windows
-+++++++
+Windows2
+++++++++
 
 .. code-block:: shell
 
@@ -13,7 +13,7 @@ Windows
 	net localgroup "Remote Desktop Users" bob /ADD
 	net localgroup "Users" bob /ADD
 
-Linux
+Linux2
 +++++++
 
 .. code-block:: shell

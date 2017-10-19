@@ -9,6 +9,8 @@
 ## Build Output
 
 ```shell
+make clean
 make html
+
 ```
 

