@@ -9,9 +9,7 @@ Windows
 
 .. code-block:: shell
 
-	systemctl start ssh
-	systemctl start apache2
-	service apache2 start
+	net start <service name>
 
 Linux
 +++++
